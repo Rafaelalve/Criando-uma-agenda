@@ -1,0 +1,235 @@
+//classe com métodos para anotações\\
+
+
+package material;
+
+
+public class anota {
+
+// declaração dos atributos \\    
+   public String hora;
+   public int data;
+   public String tarefa;
+   public String seg,ter,qua,qui,sex,sab,dom;
+   public String d1,d2,d3,d4,d5,d6,d7;
+   public String t1,t2,t3,t4,t5,t6,t7;
+   public String hr1,hr2,hr3,hr4,hr5,hr6,hr7;
+   
+   
+   
+  
+   public String sem1(){
+   return "\n"+"==============\n"+seg +"\n"+d1+"\n" + hr1+" - "+ t1 ;
+   }
+    public String sem2(){
+   return "==============\n"+ter +"\n"+d2+"\n" + hr2+" - "   + t2 ;
+   }
+    
+     public String sem3(){
+   return "==============\n"+qua +"\n"+d3+"\n" + hr3+" - "   + t3 ;
+   }
+    
+      public String sem4(){
+   return "==============\n"+qui +"\n"+d4+"\n" + hr4+" - "   + t4 ;
+   }
+    
+       public String sem5(){
+   return "==============\n"+sex +"\n"+d5+"\n" + hr5+" - "   + t5 ;
+   }
+        public String sem6(){
+   return "==============\n"+sab +"\n"+d6+"\n" + hr6+" - "   + t6 ;
+   }
+    
+         public String sem7(){
+   return "==============\n"+dom +"\n"+d7+"\n" + hr7+" - " + t7+"\n==============" ;
+   }
+    
+    
+    
+    
+  public String p(){
+  return  data+ "/11" +" \n" + hora + "-" + tarefa+"\n==============" ;
+  }
+    
+}
+
+
+
+
+
+
+
+==================================================
+//classe principal do programa\\
+
+
+
+package programa;
+import java.util.Scanner;
+import java.util.Locale;
+import material.anota;
+
+//Início do programa\\
+public class execucao {
+    public static void main(String[]args){
+      Locale.setDefault(Locale.US);
+ //Declaração de Scanner e instanciamento de classe\\       
+        Scanner sc = new Scanner(System.in);
+        anota agenda = new anota();
+        
+     System.out.println ("Datas disponíveis para durante a semana:\n10/10-Segunda-Feira"
+             + "\n11/10-Terça-Feira"
+             + "\n12/10-Quarta-Feira"
+             + "\n13/10-Quinta-Feira"
+             + "\n14/10-Sexta-Feira"
+             + "\n15/10-Sábado"
+             + "\n16/10-Domingo");   
+ // Momento em que o usuário informa os valores no scanner\\   
+ 
+         System.out.println ("Informe a tarefa que deseja agendar");
+              agenda.tarefa = sc.nextLine();
+         System.out.println ("Informe o horário que agendar");  
+              agenda.hora= sc.nextLine();  
+         System.out.println ("Informe a data que deseja agendar ");
+              agenda.data = sc.nextInt();
+          System.out.println ("\n");    
+  //  Construindo estrutura de repetição while e estabelecendo condições \\
+         while(agenda.data<10 || agenda.data>16){
+             
+           System.out.println("Data inválida\nDigite outra data:");
+             agenda.data = sc.nextInt();}
+                if(agenda.data==10){
+
+                System.out.println("Segunda-Feira\n" + agenda.p());
+                  }
+                else if(agenda.data==11){
+
+                System.out.println("Terça-Feira\n" +agenda.p());
+                  }
+                else  if(agenda.data==12){
+
+                System.out.println("Quarta-Feira\n" +agenda.p());
+                  } 
+                else  if(agenda.data==13){
+
+                System.out.println("Quinta-Feira\n" +agenda.p());
+                  }
+                else   if(agenda.data==14){
+
+                System.out.println("Sexta-Feira\n" +agenda.p());
+                  }
+                else    if(agenda.data==15){
+
+                System.out.println("\n==============\nSábado\n"+agenda.p());
+                  }
+
+                else    if(agenda.data==16){
+
+                System.out.println("Domingo\n "+agenda.p());
+                  }
+
+      
+            
+            
+  //Criação de arrays\\ 
+            System.out.println("                 Construção de uma agenda organizada(é necessário digitar os dados com cautela)");
+            System.out.println("\nDistribua os dados referentes aos dias");    
+            //Scanner para arrays 1° dia\\
+             agenda.d1 = sc.nextLine();
+             System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t1 = sc.nextLine(); 
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:\n"); 
+               agenda.d1 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+              agenda.seg = sc.nextLine();
+            System.out.println("Informe o horário:\n");  
+              agenda.hr1 = sc.nextLine();
+              
+           //Scanner para arrays 2° dia\\ 
+            System.out.println("\nDistribua os dados referentes ao segundo dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t2 = sc.nextLine();
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:\n"); 
+                agenda.d2 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.ter = sc.nextLine();
+            System.out.println("Informe o horário:"); 
+              agenda.hr2 = sc.nextLine();
+              
+             //Scanner para arrays 3° dia\\ 
+            System.out.println("\nDistribua os dados referentes ao terceiro dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t3 = sc.nextLine();
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:\n"); 
+                agenda.d3 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.qua = sc.nextLine();
+            System.out.println("Informe o horário:\n"); 
+              agenda.hr3 = sc.nextLine();
+              
+             //Scanner para arrays 4° dia\\ 
+            System.out.println("\nDistribua os dados referentes ao quarto dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t4 = sc.nextLine(); 
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:\n"); 
+                agenda.d4 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.qui = sc.nextLine();
+            System.out.println("Informe o horário:\n"); 
+              agenda.hr4 = sc.nextLine();
+              
+              //Scanner para arrays 5° dia\\
+            System.out.println("\nDistribua os dados referentes ao quinto dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t5 = sc.nextLine(); 
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:"); 
+                agenda.d5 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.sex = sc.nextLine();
+            System.out.println("Informe o horário:\n"); 
+              agenda.hr5 = sc.nextLine();  
+              
+              //Scanner para arrays 6° dia \\
+            System.out.println("\nDistribua os dados referentes ao sexto dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t6 = sc.nextLine(); 
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:\n"); 
+                agenda.d6 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.sab = sc.nextLine();
+            System.out.println("Informe o horário:\n"); 
+              agenda.hr6 = sc.nextLine();
+              
+              //Scanner para arrays 7° dia \\
+            System.out.println("\nDistribua os dados referentes ao sétimo dia:\n");
+            System.out.println("Digite a tarefa que deseja realizar:\n");  
+              agenda.t7 = sc.nextLine();
+            System.out.println("Digite a data que deseja agendar, e o mês desejado:"); 
+                agenda.d7 = sc.nextLine();
+            System.out.println("Digite o dia referente a data escolhida anteriormente:\n");
+             agenda.dom = sc.nextLine();
+            System.out.println("Informe o horário:\n"); 
+              agenda.hr7 = sc.nextLine();  
+             
+               
+    //Inclusão de métodos em arrays\\      
+    
+    String resumo[]={
+        agenda.sem1(),
+        agenda.sem2(), 
+        agenda.sem3(),
+        agenda.sem4(),
+        agenda.sem5(),
+        agenda.sem6(),
+        agenda.sem7()};
+          
+                          
+   for(int rp =0; rp<resumo.length;  rp++){
+    System.out.println(resumo[rp]);  
+    
+       }
+    }
+}
+
+
+
